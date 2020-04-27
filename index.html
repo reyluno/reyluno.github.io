@@ -10,47 +10,153 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!--JavaScript-->
   <script src="js/scroll.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
+  <script src="js/scrollindicator.js"></script>
 </head>
 
 <body>
-  <!--Scroll Indicator-->
-  <div id="scrollbar" class="scroll-container">
-    <div id="scrollbar" class="scrollbar" id="myBar"></div>
-  </div>
-  <!--Landing Page-->
-  <header id="showcase">
-    <h1>hello! i'm</h1>
-    <div class="header-container">
-      <div class="name">NICO.</div>
-      <div class="socials">
+  <div class="container">
+    <div class="navbar-container">
+      <!--Scroll Indicator-->
+      <div class="scroll-indicator-container">
+        <div class="scroll-indicator"></div>
+      </div>
+      <!--Fixed Socials-->
+      <div class="fixed-socials">
+
         <a href="#" class="fa fa-twitter"></a><br>
         <a href="#" class="fa fa-instagram"></a><br>
         <a href="#" class="fa fa-linkedin"></a><br>
       </div>
     </div>
-    <p>Designer / Artist / Student</p>
-  </header>
-  <!--About-->
-  <section id="about">
-    <a class="arrow-wrap" href="#about">
-      <span class="arrow"></span><span class="hint">about</span></a>
-    <div class="content">
-      <div class="headshot"><img src="images/PFP.png"></div>
-      <div class="textbox">
-        <p>I am an artist and designer based in <b>Manhattan.</b> I have a passion for independent projects and love working with startups!</p>
-        <br>
-        <p>I am 19 years old and a student at Columbia University, studying <b>mechanical engineering.</b> I am originally from the Washington, D.C. area.</p>
-        <br>
-        <p>For more information on my skills and experience, feel free to download my <b><a href="">resume</a></b>!
-      </div>
-      <h1>What I Do</h1>
+    <!--Scroll Indicator-->
+    <!--Landing Page-->
+    <!--Landing Page-->
+    <div class="child">
+      <header id="showcase">
+        <h1>hello! i'm</h1>
+        <div class="header-container">
+          <div class="name">NICO.</div>
+          <div class="socials">
+            <a href="#" class="fa fa-twitter"></a><br>
+            <a href="#" class="fa fa-instagram"></a><br>
+            <a href="#" class="fa fa-linkedin"></a><br>
+          </div>
+        </div>
+        <p>Designer / Artist / Student</p>
+      </header>
     </div>
-  </section>
+    <!--About-->
+    <section id="scroll-to-about" class="scroll">
+      <a href="#about"><span></span></a>
+    </section>
+    <div class="child">
+      <section id="about">
 
+        <div class="about-container">
+          <div class="description-wrapper">
+            <div class="headshot"><img src="images/PFP.png"></div>
+            <div class="textbox">
+              <p>I am an artist and designer based in <b>Manhattan.</b> I have a passion for independent projects and love working with startups!</p>
+              <br>
+              <p>I am 19 years old and a student at Columbia University, studying <b>mechanical engineering.</b> I am originally from the Washington, D.C. area.</p>
+              <br>
+              <p>For more information on my skills and experience, feel free to download my <b><a href="">resume</a></b>!
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="skills-wrapper">
+            <div class="skills-title">I can help with...</div>
+            <div class="circles-container">
+              <div class="circles">
+                <div class="skills-label" style="background-color: #0387b5;">Logos & Graphics</div>
+              </div>
+              <div class="circles">
+                <div class="skills-label" style="background-color: #000;">Web Design</div>
+              </div>
+              <div class="circles">
+                <div class="skills-label" style="background-color: #0387b5;">Art & Photo</div>
+              </div>
+              <div class="circles">
+                <div class="skills-label" style="background-color: #000;">Social Media</div>
+              </div>
+            </div>
+            <div class="scroll-to-projects-container">
+              <section id="scroll-to-projects" class="scroll">
+                <h1>projects</h1>
+                <a href="#projects"><span></span></a>
+              </section>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!--Projects-->
+    <div class="child">
+      <section id="projects">
+        <div class="projects-container">
+          <h1>Projects</h1>
+          <div class="grid-container">
+            <ul id="rig">
+              <li>
+                <a class="rig-cell" href="#">
+                  <img class="rig-img" src="images/PrideProm.jpg">
+                  <span class="rig-overlay"></span>
+                  <span class="rig-title">NOVA Pride Prom<span class="rig-subtitle">Organizer & Designer<div class="rig-divider"></div>
+                      <span class="rig-text">Annual charity event for LGBTQ+ teens in Northern Virginia. Designed logo and graphics for three consecutive years.</span></span></span>
+                  <!--<i class="right" href="https://www.novapride.org/pride-prom"></i>-->
+                </a>
+              </li>
+              <li>
+                <a class="rig-cell" href="#">
+                  <img class="rig-img" src="images/Modulus.jpg">
+                  <span class="rig-overlay"></span>
+                  <span class="rig-title">Modulus<span class="rig-subtitle">Co-founder<div class="rig-divider"></div>
+                      <span class="rig-text">Startup focused on helping teens with ADHD drive safer. Founded through LaunchX @ MIT.</span></span>
+                </a>
+              </li>
+              <li>
+                <a class="rig-cell" href="#">
+                  <img class="rig-img" src="images/Alpha.jpg">
+                  <span class="rig-overlay"></span>
+                  <span class="rig-title">Alpha<span class="rig-subtitle">Logo Designer<div class="rig-divider"></div>
+                      <span class="rig-text">Clothing brand with a focus on empowering women in STEM.</span></span>
+                </a>
+              </li>
+              <li>
+                <a class="rig-cell" href="#">
+                  <img class="rig-img" src="images/Arkangel.jpg">
+                  <span class="rig-overlay"></span>
+                  <span class="rig-title">Arkangel<span class="rig-subtitle">Developer<div class="rig-divider"></div>
+                      <span class="rig-text">Indie narrative-driven platformer, currently in development.</span></span>
+                </a>
+              </li>
+              <li>
+                <a class="rig-cell" href="#">
+                  <img class="rig-img" src="images/Arkangel.jpg">
+                  <span class="rig-overlay"></span>
+                  <span class="rig-title">Isolating Together<span class="rig-subtitle">Designer & Board Member<div class="rig-divider"></div>
+                      <span class="rig-text">COVID-19 activism and community website, by and for college students.</span>
+                </a>
+              </li>
+              <li>
+                <a class="rig-cell" href="#">
+                  <img class="rig-img" src="images/VASTS.jpg">
+                  <span class="rig-overlay"></span>
+                  <span class="rig-title">Virginia Aerospace Science & Technology Scholars<span class="rig-subtitle">Strategic Communications<div class="rig-divider"></div>
+                      <span class="rig-text">Worked with other Scholars at NASA Langley Research Center to design a mission to Mars.</span></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!--Artwork-->
+    <div class="child">
+      <section id="artwork">
+      </section>
+    </div>
+  </div>
 </body>
 
 </html>
