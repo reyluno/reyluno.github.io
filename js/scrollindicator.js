@@ -1,124 +1,128 @@
-var toc = document.querySelector( '.toc' );
-var tocPath = document.querySelector( '.toc-marker path' );
-var tocItems;
+$(document).ready(function(){
 
-// Factor of screen size that the element must cross
-// before it's considered visible
-var TOP_MARGIN = 0.1,
-    BOTTOM_MARGIN = 0.2;
+    var getMax = function(){
+        return $(document).height() - $(window).height();
+    }
 
-var pathLength;
+    var getValue = function(){
+        return $(window).scrollTop();
+    }
 
-var lastPathStart,
-		lastPathEnd;
+    if('max' in document.createElement('progress')){
+        // Browser supports progress element
+        var progressBar = $('progress');
 
-window.addEventListener( 'resize', drawPath, false );
-window.addEventListener( 'scroll', sync, false );
+        // Set the Max attr for the first time
+        progressBar.attr({ max: getMax() });
 
-drawPath();
+        $(document).on('scroll', function(){
+            // On scroll only Value attr needs to be calculated
+            progressBar.attr({ value: getValue() });
+        });
 
-function drawPath() {
-
-  tocItems = [].slice.call( toc.querySelectorAll( 'li' ) );
-
-  // Cache element references and measurements
-  tocItems = tocItems.map( function( item ) {
-    var anchor = item.querySelector( 'a' );
-    var target = document.getElementById( anchor.getAttribute( 'href' ).slice( 1 ) );
-
-    return {
-      listItem: item,
-      anchor: anchor,
-      target: target
-    };
-  } );
-
-  // Remove missing targets
-  tocItems = tocItems.filter( function( item ) {
-    return !!item.target;
-  } );
-
-  var path = [];
-  var pathIndent;
-
-  tocItems.forEach( function( item, i ) {
-
-    var x = item.anchor.offsetLeft - 5,
-        y = item.anchor.offsetTop,
-        height = item.anchor.offsetHeight;
-
-    if( i === 0 ) {
-      path.push( 'M', x, y, 'L', x, y + height );
-      item.pathStart = 0;
+        $(window).resize(function(){
+            // On resize, both Max/Value attr needs to be calculated
+            progressBar.attr({ max: getMax(), value: getValue() });
+        });
     }
     else {
-      // Draw an additional line when there's a change in
-      // indent levels
-      if( pathIndent !== x ) path.push( 'L', pathIndent, y );
+        var progressBar = $('.progress-bar'),
+            max = getMax(),
+            value, width;
 
-      path.push( 'L', x, y );
+        var getWidth = function(){
+            // Calculate width in percentage
+            value = getValue();
+            width = (value/max) * 100;
+            width = width + '%';
+            return width;
+        }
 
-      // Set the current path so that we can measure it
-      tocPath.setAttribute( 'd', path.join( ' ' ) );
-      item.pathStart = tocPath.getTotalLength() || 0;
+        var setWidth = function(){
+            progressBar.css({ width: getWidth() });
+        }
 
-      path.push( 'L', x, y + height );
+        $(document).on('scroll', setWidth);
+        $(window).on('resize', function(){
+            // Need to reset the Max attr
+            max = getMax();
+            setWidth();
+        });
     }
+});
 
-    pathIndent = x;
 
-    tocPath.setAttribute( 'd', path.join( ' ' ) );
-    item.pathEnd = tocPath.getTotalLength();
 
-  } );
 
-  pathLength = tocPath.getTotalLength();
 
-  sync();
 
-}
 
-function sync() {
 
-  var windowHeight = window.innerHeight;
 
-  var pathStart = pathLength,
-      pathEnd = 0;
 
-  var visibleItems = 0;
 
-  tocItems.forEach( function( item ) {
 
-    var targetBounds = item.target.getBoundingClientRect();
 
-    if( targetBounds.bottom > windowHeight * TOP_MARGIN && targetBounds.top < windowHeight * ( 1 - BOTTOM_MARGIN ) ) {
-      pathStart = Math.min( item.pathStart, pathStart );
-      pathEnd = Math.max( item.pathEnd, pathEnd );
 
-      visibleItems += 1;
 
-      item.listItem.classList.add( 'visible' );
-    }
-    else {
-      item.listItem.classList.remove( 'visible' );
-    }
+$(document).ready(function(){
 
-  } );
+  $('#flat').addClass("active");
+  $('#progressBar').addClass('flat');
 
-  // Specify the visible path or hide the path altogether
-  // if there are no visible items
-  if( visibleItems > 0 && pathStart < pathEnd ) {
-    if( pathStart !== lastPathStart || pathEnd !== lastPathEnd ) {
-      tocPath.setAttribute( 'stroke-dashoffset', '1' );
-      tocPath.setAttribute( 'stroke-dasharray', '1, '+ pathStart +', '+ ( pathEnd - pathStart ) +', ' + pathLength );
-      tocPath.setAttribute( 'opacity', 1 );
-    }
-  }
-  else {
-    tocPath.setAttribute( 'opacity', 0 );
-  }
+  $('#flat').on('click', function(){
+    $('#progressBar').removeClass().addClass('flat');
+    $('a').removeClass();
+    $(this).addClass('active');
+    $(this).preventDefault();
+  });
 
-  lastPathStart = pathStart;
-  lastPathEnd = pathEnd;
+  $('#single').on('click', function(){
+    $('#progressBar').removeClass().addClass('single');
+    $('a').removeClass();
+    $(this).addClass('active');
+    $(this).preventDefault();
+  });
 
-}
+  $('#multiple').on('click', function(){
+    $('#progressBar').removeClass().addClass('multiple');
+    $('a').removeClass();
+    $(this).addClass('active');
+    $(this).preventDefault();
+  });
+
+  $('#semantic').on('click', function(){
+    $('#progressBar').removeClass().addClass('semantic');
+    $('a').removeClass();
+    $(this).addClass('active');
+    $(this).preventDefault();
+    alert('hello');
+  });
+
+  $(document).on('scroll', function(){
+
+      maxAttr = $('#progressBar').attr('max');
+      valueAttr = $('#progressBar').attr('value');
+      percentage = (valueAttr/maxAttr) * 100;
+
+      if(percentage<49){
+        document.styleSheets[0].addRule('.semantic', 'color: red');
+        document.styleSheets[0].addRule('.semantic::-webkit-progress-value', 'background-color: red');
+        document.styleSheets[0].addRule('.semantic::-moz-progress-bar', 'background-color: red');
+      }
+      else if(percentage<98){
+        document.styleSheets[0].addRule('.semantic', 'color: orange');
+        document.styleSheets[0].addRule('.semantic::-webkit-progress-value', 'background-color: orange');
+        document.styleSheets[0].addRule('.semantic::-moz-progress-bar', 'background-color: orange');
+      }
+      else {
+        document.styleSheets[0].addRule('.semantic', 'color: green');
+        document.styleSheets[0].addRule('.semantic::-webkit-progress-value', 'background-color: green');
+        document.styleSheets[0].addRule('.semantic::-moz-progress-bar', 'background-color: green');
+      }
+  });
+
+});
+
+
+Resources1×0.5×0.25×Rerun
