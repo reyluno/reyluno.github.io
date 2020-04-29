@@ -6,13 +6,27 @@
   <title>Nico Aldana</title>
   <!--CSS-->
   <link href="css/index.css" rel="stylesheet" type="text/css">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!--JavaScript-->
-  <script type="text/javascript" src="/js/scroll.js"></script>
-  <script src="/js/scrollindicator.js"></script>
+  <script type="text/javascript" src="js/scroll.js"></script>
   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  <script type="text/javascript" src="js/scrollindicator.js"></script>
+  <script type="text/javascript" src="js/scrollindicator.js">
+  $(document).on('ready', function() {
+    var winHeight = $(window).height(),
+        docHeight = $(document).height(),
+        progressBar = $('progress'),
+        max, value;
+
+    /* Set the max scrollable area */
+    max = docHeight - winHeight;
+    progressBar.attr('max', max);
+
+    $(document).on('scroll', function(){
+       value = $(window).scrollTop();
+       progressBar.attr('value', value);
+    });
+  });</script>
+
 </head>
 
 <body>
@@ -172,19 +186,4 @@
 
 </body>
 
-<script>$(document).on('ready', function() {  
-  var winHeight = $(window).height(),
-      docHeight = $(document).height(),
-      progressBar = $('progress'),
-      max, value;
-
-  /* Set the max scrollable area */
-  max = docHeight - winHeight;
-  progressBar.attr('max', max);
-
-  $(document).on('scroll', function(){
-     value = $(window).scrollTop();
-     progressBar.attr('value', value);
-  });
-});</script>
 </html>
