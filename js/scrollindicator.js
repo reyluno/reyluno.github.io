@@ -1,10 +1,8 @@
 
-$(document).on('scroll', function() {
-    if($(this).scrollTop()>=$('#about').position().top){
-        alert("scrolled.");
-    }
-})
+function scrollMessage (){
+  document.getElementById("progressBar").style.background = "#000";
+}
 
-function yourActionHere(){
-	alert("scrolled!");
+function parallax() {
+  alert("parallax");
 }

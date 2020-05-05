@@ -49,17 +49,21 @@ body::-webkit-scrollbar {
 
 /* The progress container (grey background) */
 .progress-container {
-  width: 100%;
-  height: 8px;
+  height: 40%;
+  width: 5px;
+  border-radius: 2%;
+  left: 5%;
+  top: 50%;
+  transform: translate(0, -50%);
   background: #ccc;
   position: fixed;
 }
 
 /* The progress bar (scroll indicator) */
 .progress-bar {
-  height: 8px;
+  height: 20%;
   background: #4caf50;
-  width: 0%;
+  width: 100%;
 }
 
 
@@ -72,14 +76,26 @@ body::-webkit-scrollbar {
 
 /*Landing Page*/
 #showcase {
-  background-image: url(/images/Splash.jpg);
-  background-size: cover;
+  background-image: url(/images/Splash_L3.png), url(/images/Splash_L2.png),url(/images/Splash_L1.png);
+  background-size: cover, cover, cover;
   background-position: center;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 0 20px;
+  animation: 10s para infinite linear;
+}
+
+#showcase .splash img {
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: auto;
+  float: right;
+  display: flex;
+  position: absolute;
+  z-index: 0;
 }
 
 #showcase .header-container {
@@ -95,6 +111,7 @@ body::-webkit-scrollbar {
   padding: 0 30% 0 20%;
   text-align: left;
   line-height: 1.0;
+
 }
 
 #showcase .name {
@@ -261,30 +278,63 @@ body::-webkit-scrollbar {
 }
 
 #about .circles-container {
-  width: 100%
+  width: 100%;
 }
 
 #about .circles {
   display: inline-block;
-  padding: 30px 20px;
+  padding: 40px 20px;
 }
 
-#about .skills-label {
+/*
+#about .skills-bg:hover {
+  border-radius: 0%;
+  transform: scale(1.2);
+}
+
+#about .skills-bg:hover .skills-label {
+  transform: translateY(-50px);
+}
+
+#about .skills-bg:hover .skills-expanded {
+  opacity: 1;
+  height: auto;
+  width: 120px;
+  transform: translateY(-30px);
+  transition: 0.5s;
+}*/
+
+#about .skills-bg {
   background-color: #000;
   justify-content: center;
   align-items: center;
   border-radius: 100%;
   text-align: center;
-  margin: 5px 20px;
-  font-size: 15px;
+
   padding: 15px;
   display: flex;
+  flex-direction: column;
   height: 200px;
   width: 200px;
-  font: 20px 'Lemon/Milk';
-  color: #fff;
+  transition: 0.5s;
 }
 
+
+#about .skills-label {
+  font: 20px 'Lemon/Milk';
+  color: #fff;
+  transition: 0.5s;
+}
+
+#about .skills-expanded {
+  height: 0;
+  opacity: 0;
+  text-align: center;
+  font: 14px 'Montserrat';
+  color: #fff;
+  transition: 0.5s;
+  line-height: 1.2;
+}
 #about .scroll-to-projects-container {
   width: 100%;
   height: 60px;
@@ -576,6 +626,347 @@ body::-webkit-scrollbar {
   margin-top: 8px;
   vertical-align: middle;
   width: 100%;
+}
+
+#contact {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+#contact .contact-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+*---------------------------------------------*/
+input {
+	outline: none;
+	border: none;
+}
+
+textarea {
+  outline: none;
+  border: none;
+}
+
+textarea:focus, input:focus {
+  border-color: transparent !important;
+}
+
+
+input::-webkit-input-placeholder { color: #999999;}
+input:-moz-placeholder { color: #999999;}
+input::-moz-placeholder { color: #999999;}
+input:-ms-input-placeholder { color: #999999;}
+
+textarea::-webkit-input-placeholder { color: #999999;}
+textarea:-moz-placeholder { color: #999999;}
+textarea::-moz-placeholder { color: #999999;}
+textarea:-ms-input-placeholder { color: #999999;}
+
+/*---------------------------------------------*/
+button {
+	outline: none !important;
+	border: none;
+	background: transparent;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+iframe {
+	border: none !important;
+}
+
+.container-contact100 {
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+.container-contact100::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #FCFCFC;
+;
+  pointer-events: none;
+}
+
+.contact100-map {
+  position: absolute;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.wrap-contact100 {
+  width: 800px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 72px 150px 25px 150px;
+
+  box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+  -ms-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+
+/*==================================================================
+[ Form ]*/
+
+.contact100-form {
+  width: 100%;
+}
+
+.contact100-form-title {
+  display: block;
+  font-family: 'Lemon/Milk';
+  font-size: 30px;
+  color: #0387b5;
+  line-height: 1.2;
+  text-align: center;
+  padding-bottom: 34px;
+}
+
+/*------------------------------------------------------------------
+[ Input ]*/
+
+.wrap-input100 {
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+
+.input100 {
+  display: block;
+  width: 100%;
+  background: transparent;
+  font-family: 'Montserrat';
+  font-size: 16px;
+  color: #4b2354;
+  line-height: 1.2;
+}
+
+
+/*---------------------------------------------*/
+input.input100 {
+  height: 62px;
+  padding: 0 20px 0 23px;
+  border: none;
+}
+
+
+textarea.input100 {
+  min-height: 199px;
+  padding: 19px 20px 0 23px;
+}
+
+/*------------------------------------------------------------------
+[ Focus Input ]*/
+
+.focus-input100 {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.05);
+  -o-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.05);
+  -ms-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.05);
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.input100:focus + .focus-input100 {
+  box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.15);
+  -o-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.15);
+  -ms-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.15);
+}
+
+/*------------------------------------------------------------------
+[ Button ]*/
+.container-contact100-form-btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 43px;
+}
+
+.contact100-form-btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  min-width: 160px;
+  height: 42px;
+  background-color: #0387b5;
+  border-radius: 21px;
+
+  font-family: 'Montserrat';
+  font-size: 14px;
+  color: #fff;
+  line-height: 1.2;
+  text-transform: uppercase;
+  padding-top: 5px;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+
+  box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.5);
+  -moz-box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.5);
+  -webkit-box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.5);
+  -o-box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.5);
+  -ms-box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.5);
+}
+
+.contact100-form-btn:hover {
+  background-color: #026080;
+  box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.8);
+  -moz-box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.8);
+  -webkit-box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.8);
+  -o-box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.8);
+  -ms-box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.8);
+}
+
+/*------------------------------------------------------------------
+[ Alert validate ]*/
+
+.validate-input {
+  position: relative;
+}
+
+.alert-validate .focus-input100 {
+  box-shadow: 0 5px 20px 0px rgba(250, 66, 81, 0.1);
+  -moz-box-shadow: 0 5px 20px 0px rgba(250, 66, 81, 0.1);
+  -webkit-box-shadow: 0 5px 20px 0px rgba(250, 66, 81, 0.1);
+  -o-box-shadow: 0 5px 20px 0px rgba(250, 66, 81, 0.1);
+  -ms-box-shadow: 0 5px 20px 0px rgba(250, 66, 81, 0.1);
+}
+
+.alert-validate::before {
+  content: attr(data-validate);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  min-height: 62px;
+  background-color: #fff;
+  border-radius: 20px;
+  top: 0px;
+  left: 0px;
+  padding: 0 45px 0 22px;
+  pointer-events: none;
+
+  font-family: 'Montserrat';
+  font-size: 16px;
+  color: #fa4251;
+  line-height: 1.2;
+}
+
+.btn-hide-validate {
+  font-family: 'Montserrat';
+  font-size: 15px;
+  color: #fa4251;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 62px;
+  top: 0px;
+  right: 28px;
+}
+
+.rs1-alert-validate.alert-validate::before {
+  background-color: #fff;
+}
+
+.true-validate::after {
+  content: "\f269";
+  font-family: 'Montserrat';
+  font-size: 15px;
+  color: #57b846;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 62px;
+  top: 0px;
+  right: 28px;
+}
+
+#contact .info {
+  background: #CFEAF3;
+  width: 30%;
+  height: 90%;
+}
+
+#contact h1 {
+  font-size: 40px;
+  color: #0387b5;
+  padding: 50px 40px 10px 40px;
+  font-family: 'Lemon/Milk';
 }
 
 /* Responsive layout - makes a two column-layout instead of four columns */
