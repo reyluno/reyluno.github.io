@@ -1,48 +1,27 @@
-//this is where we apply opacity to the arrow
-$(window).scroll( function(){
+$(window).scroll(function(){
+    // calculate how far we've scrolled down, by percentage
+    var scrollTo = $(window).scrollTop();
+    var docHeight = $(document).height();
+    var windowHeight = $(window).height();
+    var scrollPercent = (scrollTo / (docHeight-windowHeight)) * 100;
+    scrollPercent = scrollPercent.toFixed(1);
+    console.log(scrollPercent);
+    $('#c1').removeClass('filled');
+    $('#c2').removeClass('filled');
+    $('#c3').removeClass('filled');
+    $('#c4').removeClass('filled');
+    $('#c5').removeClass('filled');
 
-  //get scroll position
-  var topWindow = $(window).scrollTop();
-  //multipl by 1.5 so the arrow will become transparent half-way up the page
-  var topWindow = topWindow * 1.5;
-  //get height of window
-  var windowHeight = $(window).height();
-  //set position as percentage of how far the user has scrolled
-  var position = topWindow / windowHeight;
-  //invert the percentage
-  position = 1 - position;
-
-  //define arrow opacity as based on how far up the page the user has scrolled
-  //no scrolling = 1, half-way up the page = 0
-  $('.arrow-wrap').css('opacity', position);
-
-});
-
-// When the user scrolls the page, execute myFunction
-window.onscroll = function() {myScroll()};
-
-function myScroll() {
-  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  var scrolled = (winScroll / height) * 100;
-  document.getElementById("myBar").style.width = scrolled + "%";
-}
-
-
-
-
-//Code stolen from css-tricks for smooth scrolling:
-$(function() {
-  $('a[href*=#]:not([href=#])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        $('html,body').animate({
-          scrollTop: target.offset().top
-        }, 1000);
-        return false;
-      }
+    if(scrollPercent < 20) {
+        $('#c1').addClass('filled');
+    } else if(scrollPercent < 40) {
+        $('#c2').addClass('filled');
+    } else if(scrollPercent < 60) {
+        $('#c3').addClass('filled');
+    } else if(scrollPercent < 80) {
+        $('#c4').addClass('filled');
+    } else {
+        $('#c5').addClass('filled');
     }
-  });
-});
+
+}).trigger('scroll');
