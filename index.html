@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- NOTE: Javascript -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script src="js/scroll.js"></script>
+  <script src="js/scrollFunction.js"></script>
 </head>
 
 <body>
@@ -22,13 +22,12 @@
       <a href="#" class="logo">nico aldana</a>
       <div class="links-wrapper">
         <div class="horizontal-line"></div>
-        <a href="http://twitter.com" class="socials fa fa-twitter"></a>
-        <a href="#" class="socials fa fa-instagram"></a>
-        <a href="#" class="socials fa fa-linkedin"></a>
+        <a href="http://twitter.com/reyluno" class="socials fa fa-twitter"></a>
+        <a href="http://instagram.com/nico.aldana" class="socials fa fa-instagram"></a>
+        <a href="http://www.linkedin.com/in/nicoaldana" class="socials fa fa-linkedin"></a>
       </div>
     </div>
     <!-- NOTE: Dynamic Page Indicator -->
-
     <div class="page-indicator-container">
       <div class="page-indicator-wrapper">
         <a href="#landing">
@@ -85,7 +84,7 @@
               I am an artist and freelance designer based in <span>New York City</span>. While I live in Manhattan, I am native to the Washington, D.C. area.<br><br>
               I'm a full-time student at <span>Columbia University</span>, studying mechanical engineering. My talents lie in branding and visual identity; I have worked with many startups and organizations to create logos and websites from
               scratch.<br><br>
-              For more information, feel free to download my <span><a href="#">resume</a></span>.
+              For more information, feel free to download my <span><a href="" onclick="return alert('Coming soon!');">resume</a></span>.
             </div>
           </div>
           <div class="divider-wrapper">
@@ -130,26 +129,26 @@
           <div class="section-title" id="gallery-title">Gallery</div>
           <div class="grid-container">
             <div class="col-one">
-              <div class="landscape"></div>
-              <div class="portrait"></div>
+              <div class="landscape"><img src="images/Iguana.jpg"></div>
+              <div class="portrait"><img src="images/Japan.jpg"></div>
             </div>
             <div class="col-two">
-              <div class="landscape"></div>
-              <div class="landscape"></div>
-              <div class="landscape"></div>
+              <div class="landscape"><img src="images/Bailando.jpg"></div>
+              <div class="landscape"><img src="images/EstesPark.jpg"></div>
+              <div class="landscape"><img src="images/MixedMedia.jpg"></div>
             </div>
             <div class="col-three">
-              <div class="portrait"></div>
-              <div class="landscape"></div>
+              <div class="portrait"><img src="images/SanFrancisco.jpg"></div>
+              <div class="landscape"><img src="images/Alejita.jpg"></div>
             </div>
             <div class="col-four">
-              <div class="landscape"></div>
-              <div class="portrait"></div>
+              <div class="landscape"><img src="images/HelloBoston.jpg"></div>
+              <div class="portrait"><img src="images/Puppeteer.jpg"></div>
             </div>
             <div class="col-five">
-              <div class="landscape"></div>
-              <div class="landscape"></div>
-              <div class="landscape"></div>
+              <div class="landscape"><img src="images/Jaguar.jpg"></div>
+              <div class="landscape"><img src="images/Fogon.jpg"></div>
+              <div class="landscape"><img src="images/StillLife.jpg"></div>
             </div>
           </div>
         </div>
@@ -167,30 +166,50 @@
           </div>
           <div class="project-grid">
             <div class="column">
-              <div class="card"><img src="images/PrideProm.jpg">
-                <div class="card-text">
-                  fajskdf;alksjdf;lakjsdfla;skj
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-text"></div>
-              </div>
+
+              <a class="card" href="https://www.novapride.org/pride-prom">
+                <img src="images/PrideProm.jpg" class="card-img">
+                <span class="card-overlay"></span>
+                <span class="card-title">NOVA Pride Prom<div class="card-divider"></div><span class="card-subtitle">Organizer & Designer
+                <span class="card-text">Annual charity event for LGBTQ+ teens in Northern Virginia. Designed logo and graphics for three consecutive years.</span></span></span>
+              </a>
+              <a class="card" href="https://www.wearalpha.shop/">
+                <img src="images/Alpha.jpg" class="card-img">
+                <span class="card-overlay"></span>
+                <span class="card-title">Alpha<div class="card-divider"></div><span class="card-subtitle">Logo Designer
+                <span class="card-text">Clothing brand with a focus on empowering women in STEM.</span></span></span>
+              </a>
+            </div>
+
+            <div class="column">
+              <a class="card" href="https://www.lemondogstudios.com/">
+                <img src="images/Arkangel.jpg" class="card-img">
+                <span class="card-overlay"></span>
+                <span class="card-title">Arkangel<div class="card-divider"></div><span class="card-subtitle">Developer
+                <span class="card-text">Indie narrative-driven platformer, currently in development.</span></span></span>
+              </a>
+              <a class="card" href="https://launchx.com/">
+                <img src="images/Modulus.jpg" class="card-img">
+                <span class="card-overlay"></span>
+                <span class="card-title">Modulus<div class="card-divider"></div><span class="card-subtitle">Co-Founder
+                <span class="card-text">Startup focused on helping teens with ADHD drive safer. Founded through LaunchX @ MIT.</span></span></span>
+              </a>
             </div>
             <div class="column">
-              <div class="card">
-                <div class="card-text"></div>
-              </div>
-              <div class="card">
-                <div class="card-text"></div>
-              </div>
-            </div>
-            <div class="column">
-              <div class="card">
-                <div class="card-text"></div>
-              </div>
-              <div class="card">
-                <div class="card-text"></div>
-              </div>
+              <a class="card" href="https://vsgc.odu.edu/vasts/">
+                <img src="images/VASTS.jpg" class="card-img">
+                <span class="card-overlay"></span>
+                <span class="card-title"  style="font-size:16px;">Virginia Aerospace Science & Technology Scholars<div class="card-divider"></div><span class="card-subtitle">Strategic Communications
+                <span class="card-text">Worked with other Scholars at NASA Langley Research Center to design a mission to Mars.</span></span></span>
+              </a>
+              <a class="card" href="#">
+                <img src="images/IsolatingTogether.jpg" class="card-img">
+                <span class="card-overlay"></span>
+                <span class="card-title">Isolating Together<div class="card-divider"></div><span class="card-subtitle">Designer &amp; Board Member
+                <span class="card-text">COVID-19 activism and community website, by and for college students.</span></span></span>
+              </a>
+
+
             </div>
           </div>
         </div>
@@ -206,14 +225,13 @@
             <div class="contact-text">For any inquiries regarding my services or potential collaboration, please feel free to reach out to me!<br><br>
               Email: nickaldanarod@gmail.com<br><br>
               Cell: 703-340-4052<br><br>
-              You can also find me on social media. Thank you for viewing my portfolio!
+              You can also find me on social media. Thank you for viewing my portfolio! Please note that this site is new and under construction, so it may not work on all browsers.
             </div>
           </div>
-          <div class="contact-photo"></div>
+          <div class="contact-photo"><img src="images/pfp.jpg"></div>
         </div>
       </section>
     </div>
-
 </body>
 
 </html>
