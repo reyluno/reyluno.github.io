@@ -34,8 +34,10 @@ $(window).scroll(function() {
 
   if (scrollPercent < 20) {
     $('#c1').addClass('filled');
+    /*$('#navbar').removeClass('solid');*/
   } else if (scrollPercent < 40) {
     $('#c2').addClass('filled');
+    /*$('#navbar').addClass('solid');*/
   } else if (scrollPercent < 60) {
     $('#c3').addClass('filled');
   } else if (scrollPercent < 80) {
