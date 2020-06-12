@@ -251,7 +251,7 @@ body::-webkit-scrollbar {
 }
 
 .desktop-only {
-  display: flex;
+  display: block;
 }
 
 .vertical-line {
@@ -306,6 +306,10 @@ button.close {
   background-color: #007DA5;
 }
 
+.mobile-only {
+  display: none;
+}
+
 @media (max-width: 800px) {
   .display-1 {
     font-size: 3em;
@@ -348,14 +352,36 @@ button.close {
     -moz-column-width: 50%;
     column-width: 50%;
   }
+
+  .title {
+    font-size: 5em;
+  }
+
+  .mobile-content {
+    display: block;
+    width: auto;
+  }
+
+  .mobile-splash img {
+    height: 70px;
+  }
+
+  .headshot {
+    margin-bottom: 10px;
+  }
+
+  .mobile-only {
+    display: flex;
+  }
+
+  #projects {
+    margin-top: 30px;
+  }
 }
 
 @media (max-width: 500px) {
-  .landing-content {
-    left: 0%;
-    position: absolute;
-    display: inline-block;
-  }
+
+
 }
 
 @media (max-width: 800px) {
