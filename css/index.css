@@ -178,10 +178,8 @@ body::-webkit-scrollbar {
   transform: scale(1.0);
 }
 
-.placeholder {
-  width: 200px;
-  height: 150px;
-  background-color: #d3d3d3;
+.headshot {
+  height: 200px;
 }
 
 .divider {
