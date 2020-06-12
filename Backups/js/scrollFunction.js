@@ -16,7 +16,7 @@ $(window).scroll(function() {
   })();
 
   // calculate how far we've scrolled down, by percentage
-  var landing = document.getElementById('hero');
+  var landing = document.getElementById('landing');
   var distanceToTop = (-1) * landing.getBoundingClientRect().top;
   windowHeight = $(window).height();
   scrollPercent = (distanceToTop / (docHeight - windowHeight)) * 100;
