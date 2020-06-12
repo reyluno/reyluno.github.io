@@ -431,6 +431,15 @@ button.close {
       padding: 0.5em;
     }
 
+    .socials {
+      font-size: 10px;
+      line-height: 100%;
+      color: #1d1d1d;
+      padding: 0 6px;
+      display: inline-block;
+      z-index: 1;
+    }
+
 }
 
 @media (max-width: 800px) {
