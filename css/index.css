@@ -408,6 +408,7 @@ button.close {
 
     .headshot {
       margin-bottom: 10px;
+      border-radius: 50%;
     }
 
     .mobile-only {
@@ -416,6 +417,18 @@ button.close {
 
     #projects {
       margin-top: 30px;
+    }
+
+    .horizontal-line {
+      float: left;
+      width: 30px;
+      height: 2px;
+      background-color: #707070;
+    }
+
+    .navbar-brand {
+      font-size: 1em;
+      padding: 0.5em;
     }
 
 }
