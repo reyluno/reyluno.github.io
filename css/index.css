@@ -254,6 +254,9 @@ body::-webkit-scrollbar {
   display: block;
 }
 
+.desktop-only-flex {
+  display: flex;
+}
 .vertical-line {
   width: 2px;
   height: 70px;
@@ -307,6 +310,10 @@ button.close {
 }
 
 .mobile-only {
+  display: none;
+}
+
+.mobile-only-flex {
   display: none;
 }
 
@@ -413,6 +420,12 @@ button.close {
 
     .mobile-only {
       display: flex;
+    }
+    .mobile-only-flex {
+      display: flex;
+    }
+    .desktop-only-flex {
+      display: none;
     }
 
     #projects {
