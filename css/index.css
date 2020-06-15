@@ -422,7 +422,7 @@ button.close {
       display: flex;
     }
     .mobile-only-flex {
-      display: flex;
+      display: block;
     }
     .desktop-only-flex {
       display: none;
