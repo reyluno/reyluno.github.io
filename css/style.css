@@ -11,7 +11,8 @@ Import Google Fonts
 --------------------*/
 
 /* main font for menu. */
-@import url(http://fonts.googleapis.com/css?family=Roboto:400|Raleway:200,300,400,500,700,900);
+@import url('http://fonts.googleapis.com/css?family=Roboto:400|Raleway:200,300,400,500,700,900');
+
 
 /*--------------------
 1. General
@@ -688,7 +689,7 @@ font-size: 11px;
     transition: 1s;
 }
 #back-top a:hover {
-    background: #fed136;
+    background: #367ba1;
 }
 /* arrow icon (span tag) */
 #back-top i {
