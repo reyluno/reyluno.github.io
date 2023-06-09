@@ -652,8 +652,19 @@ section#contact .form-group textarea {
 	text-align: center;
   }
 
+  .image-container-alt {
+	text-align: center;
+  }
+
   .image-container img {
 	max-width: 100%;
+	height: auto;
+	display: block;
+	margin: 0 auto;
+  }
+
+  .image-container-alt img {
+	max-height: 300px;
 	height: auto;
 	display: block;
 	margin: 0 auto;

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="icon" href="favicon.ico">
+		<title>Nico Aldana | Machine Design</title>
+		<!-- Bootstrap core CSS -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/7f5334cc97.js" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<!-- Custom styles for this template -->
+		<link href="css/style.css" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+			</style>
+	</head>
+	<body id="page-top">
+		<!-- Navigation -->
+		<nav class="navbar navbar-default">
+			<div class="container">
+				<!-- Toggle Navigation -->
+				<div class="navbar-header page-scroll">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand page-scroll" href="index.html"><img src="images/logo.png" alt="Nico Aldana"></a>
+				</div>
+				<!-- Nav Links -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li class="hidden">
+							<a href="#page-top"></a>
+						</li>
+						<li>
+							<a class="page-scroll" href="index.html#about">About</a>
+						</li>
+						<li>
+							<a class="page-scroll" href="index.html#portfolio">Portfolio</a>
+						</li>
+						<li>
+							<a class="page-scroll" href="index.html#contact">Contact</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<section id="details" class="mz-module">
+			<div class="container light-bg">
+                <div class="header-image">
+                    <img src="images/headers/machine-design.jpg" alt="Header Image">
+                    <!-- Back to Portfolio Button -->
+                        <a href="/index.html#portfolio">
+                            <div class="top-left">
+                          Back to Portfolio
+                        </div>
+                        </a>
+                      
+                    <div class="text-overlay">
+                        <div class="text-container">
+                            <h1>Four-Bar Linkage</h1>
+                            <h3>Machine Design</h3>
+                        </div>
+                      
+                    </div>
+                  </div>
+				  <!-- Skill Tags -->
+                <div class="modal-works"><span>CAD Modeling</span><span>CNC Machining</span><span>Analysis</span><span>Arduino</span></div>
+               
+				<div class="row my-5">
+					<div class="col-lg-12">
+                        <h2>The Problem</h1>
+						<p>We were tasked with creating a four-bar linkage robot that would press as many flashing buttons on a gameboard as possible in one minute. We were responsible for all calculations, modeling, manufacturing, and programming, with a few constraints (such as motor selection, power, and size).</p>
+					</div>
+				
+                </div>
+				
+				<div class="section-divider"></div>
+                <div class="row my-5">
+                    <div class="col-lg-12">
+                        <h2>Our Solution</h1>
+                            <p>We began by designing a basic coupler and finding linkage lengths with acceptable transmission angles. Then, we made a preliminary CAD assembly with each part. We used the moments of inertia for each part to calculate the necessary <b>transmission ratio</b> for the motor.</p>
+                    </div>
+                </div>
+				<div class="image-row">
+					<div class="image-container">
+					  <img src="images/portfolio/md-solidworks.jpg" alt="SKETCH">
+					  <div class="caption">Initial SolidWorks Sketch</div>
+					</div>
+					<div class="image-container">
+					  <img src="images/portfolio/md-transmission.jpg" alt="TRANSMISSION RATIO">
+					  <div class="caption">Transmission Ratio Calculation</div>
+					</div>
+				  </div>
+				  <div class="row">
+					<div class="col-lg-12">
+                        <p>After finalizing each model, we machined the parts out of quarter-inch aluminum.</p>
+					</div>
+				  </div>
+				  <div class="image-row">
+					<div class="image-container">
+					  <img src="images/portfolio/md-cad.jpg" alt="SOLIDWORKS MODEL">
+					  <div class="caption">CAD Model & Assembly</div>
+					</div>
+					<div class="image-container">
+					  <img src="images/portfolio/md-machining.jpg" alt="FINAL PARTS">
+					  <div class="caption">Machining</div>
+					</div>
+				  </div>
+                  <div class="image-row">
+                    <div class="image-container-alt">
+                 
+                            <img src="images/portfolio/md-final.jpg" alt="Glamour Shot">
+                            <div class="caption">CAD Render & Final Assembly</div>
+                    
+                    </div>
+                  </div>
+				  <div class="row">
+					<div class="col-lg-12">
+                        <p>The machine is programmed to read digital inputs from the game board Arduino and respond by providing the appropriate voltage to move the coupler to the correct position and fire the solenoid.</p>
+                        <p>The motion of the machine is dictated by <b>PID control</b>, with the PID constants being found through testing.</p>
+					</div>
+				  </div>
+                  <div class="image-row">
+					<div class="image-container">
+					  <img src="images/portfolio/md-pos1.jpg" alt="POSITION 1">
+					  <div class="caption">Position 1</div>
+					</div>
+					<div class="image-container">
+					  <img src="images/portfolio/md-pos2.jpg" alt="POSITION 2">
+					  <div class="caption">Position 2</div>
+					</div>
+                    <div class="image-container">
+                        <img src="images/portfolio/md-pos3.jpg" alt="POSITION 3">
+					  <div class="caption">Position 3</div>
+                    </div>
+				  </div>
+                  
+                  <div class="row">
+					<div class="col-lg-12">
+                        <p>We achieved a final score of <b>192 button presses per minute!</b> You can view the full video below.</p>
+					</div>
+				  </div>
+
+				  <div class="media-row">
+					<div class="media-container">
+					  <iframe width="560" height="315" src="https://drive.google.com/file/d/1zPfOuVnWFCGnFNv3ExcjrnCqu8FRqjV6/preview" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+					
+					<div class="media-container">
+						<a href="/files/md-report.pdf">Download</a> our progress reports.</p>
+					  <object data="files/md-report.pdf" type="application/pdf" width="500px" height="100%">
+						
+					  </object>
+					</div>
+				  </div>
+               <div class="section-divider"></div>
+               <div class="image-row">
+                <div class="image-container">
+                    <img src="images/portfolio/md-team.jpg" alt="TEAM">
+                  <div class="caption">Team Photo :)</div>
+                </div>
+              </div>
+			
+               <!---- <div class="row">  
+					<div class="col-lg-12">
+                        <h2>What We Learned</h2>
+                        <p>Our final design struggled to stay balanced because of two primary design flaws. The first is that all of our joints are in parallel planes, so it was difficult to compensate for roll and yaw. Second, our center of mass was high relative to the body of the robot, so it took less force to topple it.</p>
+                        <p>We intend to redesign Slaymax to account for these flaws and hope to increase his overall walk speed!</p>
+					</div>
+					
+				</div>
+                <div class="image-row">
+					<div class="image-container">
+					  <img src="images/portfolio/rs-result.jpg" alt="RESULT">
+					  <div class="caption">Presentation Day!</div>
+					</div>
+
+				  </div>-->
+				
+                
+			</div>
+			<!-- /.container -->
+            <div class="text-center">
+                <a href="/index.html" class="btn btn-primary btn-md">Back to Portfolio</a>
+              </div>
+		</section>
+
+
+		<p id="back-top">
+			<a href="#top"><i class="fa fa-angle-up"></i></a>
+		</p>
+		<footer>
+			<div class="container text-center">
+				<p><a href="index.html" target="_blank"><span>home</span></a></p>
+				<p><a href="https://www.linkedin.com/in/nicoaldana/" target="_blank"><span>linkedin</span></a></p>
+				<p><a href="mailto:na2851@columbia.edu" target="_blank"><span>email</span></a></p>
+			</div>
+		</footer>
+
+		<!-- Modal for portfolio item 1 -->
+		<div class="modal fade" id="Modal-1" tabindex="-1" role="dialog" aria-labelledby="Modal-label-1">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="Modal-label-1">Space Debris Capture</h4>
+					</div>
+					<div class="modal-body">
+						<img src="images/portfolio/portfolio-1.jpg" alt="img01" class="img-responsive" />
+						<div class="modal-works"><span>CAD Modeling</span><span>Analysis</span><span>Machining</span><span id="in-progress">In Progress</span></div>
+						<p>In partnership with <a href="https://scienceandtechnology.jpl.nasa.gov/opportunities/academic-partnerships/juci" target="_blank">NASA JPL,</a> our senior design team tackled the issue of <b>orbital space debris.</b></p>
+						<img src="images/portfolio/sd-1.jpg" alt="img01" class="img-responsive" />
+						<p>Our goal was to design a mechanism that could safely and effectively capture a piece of space debris that is 10-30 cm in diameter.</p>
+						<img src="images/portfolio/sd-3.jpg" alt="" class="img-responsive" />
+						<p>Our design consists of an <b>inner and outer aperture.</b> The outer aperture is mailbox-like and is responsible for the initial grab of the space debris. The inner aperture functions like a garage door between the initial capture area and the storage container (not pictured).</p>
+						<p>Together, the inner and outer apertures create a grabbing mechanism that can grab and store many pieces of orbital space debris.</p>
+						<img src="images/portfolio/sd-5.jpg" alt="" class="img-responsive" />
+						<p>We went through several design iterations before choosing our final design based on manufacturability and material constraints.</p>
+						<img src="images/portfolio/sd-2.jpg" alt="" class="img-responsive" />
+						<p>We performed motion studies and impact analysis to guide our manufacturing decisions.</p>
+						<img src="images/portfolio/sd-4.jpg" alt="" class="img-responsive" />
+						<p>With mentorship from NASA engineers and Columbia faculty, we were able to begin machining a full-scale prototype!</p>
+						<div class="modal-row">
+							<img src="images/portfolio/sd-6.gif" alt="machining-gif" class="img-embed" />
+							<img src="images/portfolio/sd-7.gif" alt="aperture-gif" class="img-embed" />
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal for portfolio item 2 -->
+		<div class="modal fade" id="Modal-2" tabindex="-1" role="dialog" aria-labelledby="Modal-label-2">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="Modal-label-2">Bipedal Robot</h4>
+					</div>
+					<div class="modal-body">
+						<img src="images/portfolio/portfolio-2.jpg" alt="img01" class="img-responsive" />
+						<div class="modal-works"><span>CAD Modeling</span><span>3D Printing</span><span>Robotics</span><span>Python</span></div>
+						<p>The goal of this project was to create an autonomous walking bipedal robot completely from scratch. We decided to make a design inspired by Baymax from Disney's Big Hero 6.</p>
+						<div class="modal-row">
+							<img src="images/portfolio/slaymax-1.jpg" alt="" class="img-embed" />
+							<img src="images/portfolio/slaymax-2.gif" alt="" class="img-embed" />
+						</div>
+						<p>We were responsible for every phase of design—initial sketching, 3D modeling, printing and prototyping, assembly, electronics, and programming.</p>
+						<div class="modal-row">
+							<img src="images/portfolio/slaymax-3.jpg" alt="" class="img-embed" />
+							<img src="images/portfolio/slaymax-4.jpg" alt="" class="img-embed" />
+						</div>
+						<p>Every design iteration was a cycle of modeling, simulation, printing, and testing.</p>
+						<div class="modal-row">
+							<img src="images/portfolio/slaymax-5.jpg" alt="" class="img-embed" />
+							<img src="images/portfolio/slaymax-6.jpg" alt="" class="img-embed" />
+						</div>
+						<p>Simulations were conducted in pybullet. A hill-climber algorithm were used to determine the best constants for motor actuation.</p>
+						<div class="modal-row">
+							<img src="images/portfolio/slaymax-7.jpg" alt="" class="img-embed" />
+							<img src="images/portfolio/slaymax-9.jpg" alt="" class="img-embed" />
+						</div>
+						<p>Our final robot was able to walk at nearly 1 cm/s. In the future, we want to improve this and add cosmetic changes, such as an outer shell.</p>
+							<img src="images/portfolio/slaymax-8.jpg" alt="" class="img-responsive" />
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- Bootstrap core JavaScript
+			================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/SmoothScroll.js"></script>
+		<script src="js/theme-scripts.js"></script>
+	</body>
+</html>
