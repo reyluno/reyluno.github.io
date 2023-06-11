@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="icon" href="favicon.ico">
+		<title>Nico Aldana | Computer Vision</title>
+		<!-- Bootstrap core CSS -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/7f5334cc97.js" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<!-- Custom styles for this template -->
+		<link href="css/style.css" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+			</style>
+	</head>
+	<body id="page-top">
+		<!-- Navigation -->
+		<nav class="navbar navbar-default">
+			<div class="container">
+				<!-- Toggle Navigation -->
+				<div class="navbar-header page-scroll">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand page-scroll" href="index.html"><img src="images/logo.png" alt="Nico Aldana"></a>
+				</div>
+				<!-- Nav Links -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li class="hidden">
+							<a href="#page-top"></a>
+						</li>
+						<li>
+							<a class="page-scroll" href="index.html#about">About</a>
+						</li>
+						<li>
+							<a class="page-scroll" href="index.html#portfolio">Portfolio</a>
+						</li>
+						<li>
+							<a class="page-scroll" href="index.html#contact">Contact</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<section id="details" class="mz-module">
+			<div class="container light-bg">
+                <div class="header-image">
+                    <img src="images/headers/cv.jpg" alt="Header Image">
+                    <!-- Back to Portfolio Button -->
+                        <a href="/index.html#portfolio">
+                            <div class="top-left">
+                          Back to Portfolio
+                        </div>
+                        </a>
+                      
+                    <div class="text-overlay">
+                        <div class="text-container">
+                            <h1>OpenCV Ball Tracker</h1>
+                            <h3>Computer Vision with Raspberry Pi</h3>
+                        </div>
+                      
+                    </div>
+                  </div>
+				  <!-- Skill Tags -->
+                <div class="modal-works"><span>Python</span><span>Raspberry Pi</span><span>OpenCV</span><span>Control Systems</span></div>
+               
+				<div class="row my-5">
+					<div class="col-lg-12">
+                        <h2>The Problem</h1>
+                            <p>The objective was to create a ball-tracking algorithm that would <b>a) detect the presence of specific-colored balls</b> in the camera's field of view and <b>b) pan and tilt</b> the mechanism to keep the ball in the center of the frame.</p>
+					</div>
+				
+                </div>
+				
+				<div class="section-divider"></div>
+                <div class="row my-5">
+                    <div class="col-lg-12">
+                        <h2>Our Solution</h1>
+                            <p>First, we needed a way to detect the colored balls. We achieved this by converting each frame of the video input into the HSV color space. Through some testing, we were able to find the upper and lower bounds for the colors we wanted to detect.</p>
+                            <p>Next, we wrote some code to find the X and Y coordinates for the center of the ball and trace a contour on the video feed. All of this was achieved using the <b>OpenCV library</b> in Python, loaded onto a Raspberry Pi 4.</p>
+                    </div>
+                </div>
+				<div class="image-row">
+					<div class="image-container">
+					  <img src="images/portfolio/cv-objdet.jpg" alt="DETECTION">
+					  <div class="caption">Object Detection</div>
+					</div>
+					<div class="image-container">
+					  <img src="images/portfolio/cv-objtracking.jpg" alt="TRACKING">
+					  <div class="caption">Object Tracking</div>
+					</div>
+				  </div>
+				  <div class="row">
+					<div class="col-lg-12">
+                        <p>The detection code successfully detected a tennis ball in the video feed. Now, it was time to actuate the two servo motors that the camera was attached to.</p>
+                        <p>For smooth tracking, we implemented <b>PID control</b>. By calculating the error between the center of the tracking object and the center of the camera frame, we could use PID control to tilt and pan the camera smoothly. The most time-consuming part was finding the appropriate KP, KI, and KD constants.</p>
+					</div>
+				  </div>
+				  <div class="image-row">
+					<div class="image-container">
+					  <img src="images/portfolio/cv-setup.jpg" alt="SETUP">
+					  <div class="caption">Camera Setup</div>
+					</div>
+				  </div>
+				  <div class="row">
+					<div class="col-lg-12">
+                        <p>Here are some videos of the object detection in action:</p>
+					</div>
+				  </div>
+                  <div class="media-container">
+                    <iframe width="560" height="315" src="https://drive.google.com/file/d/1qxVRoow1F3gCwNRjIALB7PDeAaam8nTW/preview" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://drive.google.com/file/d/1MJ50G_SLYUj7tfID5iprWWzTtgrAAvOo/preview" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+    
+					<div class="media-container">
+						<a href="/files/cv-report.pdf">Download</a> our lab report.</p>
+					  <object data="files/cv-report.pdf" type="application/pdf" width="500px" height="100%">
+						
+					  </object>
+					</div>
+				  </div>
+			
+               <!---- <div class="row">  
+					<div class="col-lg-12">
+                        <h2>What We Learned</h2>
+                        <p>Our final design struggled to stay balanced because of two primary design flaws. The first is that all of our joints are in parallel planes, so it was difficult to compensate for roll and yaw. Second, our center of mass was high relative to the body of the robot, so it took less force to topple it.</p>
+                        <p>We intend to redesign Slaymax to account for these flaws and hope to increase his overall walk speed!</p>
+					</div>
+					
+				</div>
+                <div class="image-row">
+					<div class="image-container">
+					  <img src="images/portfolio/rs-result.jpg" alt="RESULT">
+					  <div class="caption">Presentation Day!</div>
+					</div>
+
+				  </div>-->
+				
+                
+			</div>
+			<!-- /.container -->
+            <div class="text-center">
+                <a href="/index.html" class="btn btn-primary btn-md">Back to Portfolio</a>
+              </div>
+		</section>
+
+
+		<p id="back-top">
+			<a href="#top"><i class="fa fa-angle-up"></i></a>
+		</p>
+		<footer>
+			<div class="container text-center">
+				<p><a href="index.html" target="_blank"><span>home</span></a></p>
+				<p><a href="https://www.linkedin.com/in/nicoaldana/" target="_blank"><span>linkedin</span></a></p>
+				<p><a href="mailto:na2851@columbia.edu" target="_blank"><span>email</span></a></p>
+			</div>
+		</footer>
+
+
+		<!-- Bootstrap core JavaScript
+			================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/SmoothScroll.js"></script>
+		<script src="js/theme-scripts.js"></script>
+	</body>
+</html>
