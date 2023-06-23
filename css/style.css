@@ -692,11 +692,17 @@ section#contact .form-group textarea {
 	box-sizing: border-box; /* Include padding in the total width */
 	text-align: center;
   }
+  .media-container-pdf {
+	flex-basis: 50%; /* Take 50% of the row width */
+	height: 600px;
+	padding: 30px;
+	display: block;
+	text-align: center;
+  }
 
   .media-container embed,
   .media-container object {
 	max-width: 100%;
-	height: auto;
 	display: block;
 	margin: 0 auto;
   }
